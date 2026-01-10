@@ -102,29 +102,40 @@ const Header = () => {
               <div key={item.name} className="relative">
                 {item.hasDropdown ? (
                   <div 
+                    ref={dropdownRef}
                     className="relative"
-                    onMouseEnter={() => setServicesDropdownOpen(true)}
-                    onMouseLeave={() => setServicesDropdownOpen(false)}
+                    onMouseEnter={handleDropdownOpen}
+                    onMouseLeave={handleDropdownClose}
                   >
                     <button
-                      className={`flex items-center space-x-1 text-sm font-medium transition-colors hover:text-blue-600 ${
+                      onClick={toggleDropdown}
+                      className={`flex items-center space-x-1 text-sm font-medium transition-colors hover:text-blue-600 cursor-pointer ${
                         location.pathname.startsWith('/services') ? 'text-blue-600' : ''
                       }`}
+                      aria-expanded={servicesDropdownOpen}
+                      aria-haspopup="true"
                     >
                       <span>{item.name}</span>
-                      <ChevronDown className="h-4 w-4" />
+                      <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`} />
                     </button>
                     {servicesDropdownOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-56 bg-background border rounded-lg shadow-lg py-2">
-                        {servicesMenu.map((service) => (
-                          <Link
-                            key={service.name}
-                            to={service.href}
-                            className="block px-4 py-2 text-sm hover:bg-accent transition-colors"
-                          >
-                            {service.name}
-                          </Link>
-                        ))}
+                      <div 
+                        className="absolute top-full left-0 pt-2 z-50"
+                        onMouseEnter={handleDropdownOpen}
+                        onMouseLeave={handleDropdownClose}
+                      >
+                        <div className="w-64 bg-background border rounded-lg shadow-xl py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                          {servicesMenu.map((service) => (
+                            <Link
+                              key={service.name}
+                              to={service.href}
+                              className="block px-4 py-3 text-sm hover:bg-accent transition-colors hover:text-blue-600 font-medium"
+                              onClick={() => setServicesDropdownOpen(false)}
+                            >
+                              {service.name}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     )}
                   </div>
