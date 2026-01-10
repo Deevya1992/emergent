@@ -38,7 +38,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="https://customer-assets.emergentagent.com/job_enterprise-tech-15/artifacts/qm9e1986_1.png" 
+              src="https://customer-assets.emergentagent.com/job_enterprise-tech-15/artifacts/n7fl5o8t_1.png" 
               alt="Deaxautt Logo" 
               className="h-8 w-auto"
             />
