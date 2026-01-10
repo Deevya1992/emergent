@@ -141,24 +141,40 @@ const About = () => {
       {/* Journey Timeline */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
-            <p className="text-xl text-muted-foreground">Milestones that shaped who we are today</p>
+            <p className="text-xl text-muted-foreground">From humble beginnings to industry leadership - here's how we've grown</p>
           </div>
-          <div className="max-w-4xl mx-auto">
-            <div className="space-y-8">
+          <div className="max-w-5xl mx-auto relative">
+            {/* Vertical Timeline Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200 dark:bg-blue-900/30"></div>
+            
+            <div className="space-y-16">
               {milestones.map((milestone, index) => (
-                <div key={index} className="flex gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
-                      {milestone.year}
+                <div key={index} className="relative">
+                  {/* Timeline Dot */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-background z-10"></div>
+                  
+                  {/* Content - Alternating left and right */}
+                  <div className={`flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                    <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+                      <Card className="hover:shadow-xl transition-shadow duration-300 border-2 hover:border-blue-600">
+                        <CardContent className="p-6">
+                          <div className={`text-center ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                            <div className="text-3xl font-bold text-blue-600 mb-3">
+                              {milestone.year}
+                            </div>
+                            <h3 className="text-xl font-bold mb-3 text-foreground">
+                              {milestone.event.split('-')[0].trim()}
+                            </h3>
+                            <p className="text-muted-foreground">
+                              {milestone.event.includes('-') ? milestone.event.split('-').slice(1).join('-').trim() : milestone.event}
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
                     </div>
                   </div>
-                  <Card className="flex-1">
-                    <CardContent className="p-6">
-                      <p className="text-lg">{milestone.event}</p>
-                    </CardContent>
-                  </Card>
                 </div>
               ))}
             </div>
