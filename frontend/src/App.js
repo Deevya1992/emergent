@@ -1,53 +1,59 @@
-import { useEffect } from "react";
-import "@/App.css";
+import React from "react";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import { ThemeProvider } from "./context/ThemeContext";
+import { Toaster } from "./components/ui/sonner";
+import Header from "./components/Layout/Header";
+import Footer from "./components/Layout/Footer";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+// Pages
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
+import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import CaseStudies from "./pages/CaseStudies";
+import FAQs from "./pages/FAQs";
+import Industries from "./pages/Industries";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
+import CookiePolicy from "./pages/CookiePolicy";
 
 function App() {
   return (
-    <div className="App">
+    <ThemeProvider>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
+        <div className="App flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/services/:slug" element={<ServiceDetail />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/case-studies" element={<CaseStudies />} />
+              <Route path="/faqs" element={<FAQs />} />
+              <Route path="/industries" element={<Industries />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-conditions" element={<TermsConditions />} />
+              <Route path="/cookie-policy" element={<CookiePolicy />} />
+              
+              {/* Redirect old routes */}
+              <Route path="/why-choose-us" element={<About />} />
+              <Route path="/our-process" element={<About />} />
+              <Route path="/technologies" element={<About />} />
+              <Route path="/testimonials" element={<About />} />
+              <Route path="/resources" element={<Blog />} />
+            </Routes>
+          </main>
+          <Footer />
+          <Toaster />
+        </div>
       </BrowserRouter>
-    </div>
+    </ThemeProvider>
   );
 }
 
