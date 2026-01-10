@@ -39,7 +39,7 @@ const CookiePolicy = () => {
             <p>We may update this Cookie Policy from time to time. The latest version will always be available on this page.</p>
 
             <h2>7. Contact Us</h2>
-            <p>If you have questions about our use of cookies, please contact us at info@deaxautt.com or +91 98765 43210.</p>
+            <p>If you have questions about our use of cookies, please contact us at sales@deaxautt.com or +91 98480 00876.</p>
           </div>
         </div>
       </section>
