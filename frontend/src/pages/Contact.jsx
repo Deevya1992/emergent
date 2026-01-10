@@ -34,11 +34,26 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
+    // For static website, use mailto or formspree
+    // Option 1: Using mailto (opens email client)
+    const subject = encodeURIComponent(`Contact Form: ${formData.service}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone}\n` +
+      `Company: ${formData.company || 'N/A'}\n` +
+      `Service: ${formData.service}\n` +
+      `Budget: ${formData.budget || 'N/A'}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    
+    // Open email client
+    window.location.href = `mailto:sales@deaxautt.com?subject=${subject}&body=${body}`;
+    
     setTimeout(() => {
       toast({
-        title: "Message Sent!",
-        description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+        title: "Email Client Opened!",
+        description: "Please send the email from your email client.",
       });
       setIsSubmitting(false);
       setFormData({
@@ -50,7 +65,7 @@ const Contact = () => {
         budget: '',
         message: ''
       });
-    }, 1500);
+    }, 1000);
   };
 
   const whatsappLink = `https://wa.me/+919848000876?text=Hi, I would like to discuss a project`;
