@@ -41,9 +41,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-4">
-              <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-                Deaxautt
-              </div>
+              <img 
+                src="https://customer-assets.emergentagent.com/job_enterprise-tech-15/artifacts/qm9e1986_1.png" 
+                alt="Deaxautt Logo" 
+                className="h-8 w-auto"
+              />
             </Link>
             <p className="text-sm text-muted-foreground mb-4">
               Innovate | Connect | Inspire
