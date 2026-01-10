@@ -33,6 +33,56 @@ const Header = () => {
   const whatsappNumber = '+919848000876';
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi, I would like to discuss a project`;
 
+  // Handle dropdown open with immediate response
+  const handleDropdownOpen = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setServicesDropdownOpen(true);
+  };
+
+  // Handle dropdown close with delay to prevent flicker
+  const handleDropdownClose = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setServicesDropdownOpen(false);
+    }, 150); // 150ms delay prevents accidental closes
+  };
+
+  // Toggle dropdown on click (for touchpads and touch devices)
+  const toggleDropdown = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setServicesDropdownOpen(prev => !prev);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setServicesDropdownOpen(false);
+      }
+    };
+
+    if (servicesDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, [servicesDropdownOpen]);
+
+  // Close dropdown when navigating
+  useEffect(() => {
+    setServicesDropdownOpen(false);
+  }, [location.pathname]);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
