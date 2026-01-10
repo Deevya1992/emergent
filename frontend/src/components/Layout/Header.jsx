@@ -37,9 +37,11 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-              Deaxautt
-            </div>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_enterprise-tech-15/artifacts/qm9e1986_1.png" 
+              alt="Deaxautt Logo" 
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
