@@ -17,7 +17,7 @@ def send_contact_email(contact_data: Dict) -> bool:
         smtp_port = int(os.environ.get('SMTP_PORT', '587'))
         smtp_user = os.environ.get('SMTP_USER', '')
         smtp_password = os.environ.get('SMTP_PASSWORD', '')
-        recipient_email = os.environ.get('CONTACT_EMAIL', 'info@deaxautt.com')
+        recipient_email = os.environ.get('CONTACT_EMAIL', 'sales@deaxautt.com')
         
         # Create email content
         subject = f"New Contact Form Submission - {contact_data['name']}"
