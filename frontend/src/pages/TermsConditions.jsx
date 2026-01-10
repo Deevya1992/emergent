@@ -41,7 +41,7 @@ const TermsConditions = () => {
             <p>These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions.</p>
 
             <h2>10. Contact</h2>
-            <p>For questions about these Terms, please contact us at info@deaxautt.com or +91 98765 43210.</p>
+            <p>For questions about these Terms, please contact us at sales@deaxautt.com or +91 98480 00876.</p>
           </div>
         </div>
       </section>
