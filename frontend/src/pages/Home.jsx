@@ -6,7 +6,7 @@ import { Card, CardContent } from '../components/ui/card';
 import { testimonials, clients, servicesList } from '../data/mock';
 
 const Home = () => {
-  const whatsappLink = `https://wa.me/+919876543210?text=Hi, I would like to discuss a project`;
+  const whatsappLink = `https://wa.me/+919848000876?text=Hi, I would like to discuss a project`;
 
   const stats = [
     { label: 'Projects Delivered', value: '500+', icon: CheckCircle },
