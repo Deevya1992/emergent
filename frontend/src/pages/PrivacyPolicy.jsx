@@ -35,7 +35,7 @@ const PrivacyPolicy = () => {
             <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.</p>
 
             <h2>8. Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us at info@deaxautt.com or +91 98765 43210.</p>
+            <p>If you have any questions about this Privacy Policy, please contact us at sales@deaxautt.com or +91 98480 00876.</p>
           </div>
         </div>
       </section>
