@@ -56,19 +56,19 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="h-4 w-4 text-blue-600" />
-                <a href="mailto:info@deaxautt.com" className="hover:text-blue-600 transition-colors">
-                  info@deaxautt.com
+                <a href="mailto:sales@deaxautt.com" className="hover:text-blue-600 transition-colors">
+                  sales@deaxautt.com
                 </a>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Phone className="h-4 w-4 text-blue-600" />
-                <a href="tel:+919876543210" className="hover:text-blue-600 transition-colors">
-                  +91 98765 43210
+                <a href="tel:+919848000876" className="hover:text-blue-600 transition-colors">
+                  +91 98480 00876
                 </a>
               </div>
-              <div className="flex items-center space-x-2 text-sm">
-                <MapPin className="h-4 w-4 text-blue-600" />
-                <span>Mumbai, India</span>
+              <div className="flex items-start space-x-2 text-sm">
+                <MapPin className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
+                <span>Awfis-Ohris Tech Park Plot no 13, Survey 64/2, Madhapur, HITEC City, Hyderabad, Telangana 500081</span>
               </div>
             </div>
           </div>

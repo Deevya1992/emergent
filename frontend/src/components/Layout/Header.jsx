@@ -28,7 +28,7 @@ const Header = () => {
     { name: 'Digital Marketing', href: '/services/digital-marketing' }
   ];
 
-  const whatsappNumber = '+919876543210'; // Replace with actual number
+  const whatsappNumber = '+919848000876';
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi, I would like to discuss a project`;
 
   return (
