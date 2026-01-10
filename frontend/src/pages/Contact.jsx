@@ -53,31 +53,31 @@ const Contact = () => {
     }, 1500);
   };
 
-  const whatsappLink = `https://wa.me/+919876543210?text=Hi, I would like to discuss a project`;
+  const whatsappLink = `https://wa.me/+919848000876?text=Hi, I would like to discuss a project`;
 
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email Us',
-      details: 'info@deaxautt.com',
-      link: 'mailto:info@deaxautt.com'
+      details: 'sales@deaxautt.com',
+      link: 'mailto:sales@deaxautt.com'
     },
     {
       icon: Phone,
       title: 'Call Us',
-      details: '+91 98765 43210',
-      link: 'tel:+919876543210'
+      details: '+91 98480 00876',
+      link: 'tel:+919848000876'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: 'Mumbai, India',
+      details: 'Hyderabad, Telangana',
       link: null
     },
     {
       icon: Clock,
       title: 'Business Hours',
-      details: 'Mon-Fri: 9AM-6PM IST',
+      details: '10AM - 7PM IST',
       link: null
     }
   ];
