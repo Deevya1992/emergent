@@ -30,12 +30,13 @@ const About = () => {
   ];
 
   const milestones = [
-    { year: '2015', event: 'Deaxautt founded with a vision to transform businesses digitally' },
-    { year: '2017', event: 'Expanded services to include comprehensive digital marketing' },
-    { year: '2019', event: 'Crossed 100+ clients milestone and expanded to international markets' },
-    { year: '2021', event: 'Launched enterprise software division serving Fortune 500 companies' },
-    { year: '2023', event: 'Achieved 500+ project deliveries across 15+ countries' },
-    { year: '2025', event: 'Leading IT services provider with 50+ expert team members' }
+    { year: '2019', event: 'Company Founded - Deaxautt was established with a vision to transform businesses through technology.' },
+    { year: '2020', event: 'First Major Client - Successfully delivered our first enterprise-level software solution.' },
+    { year: '2021', event: 'Team Expansion - Grew our team to include specialists in mobile development and digital marketing.' },
+    { year: '2022', event: 'Global Reach - Extended our services internationally, serving clients across multiple continents.' },
+    { year: '2023', event: 'Innovation Lab - Launched our R&D division focusing on AI/ML and emerging technologies.' },
+    { year: '2024', event: 'Market Leader - Recognized as a leading provider of custom software and digital marketing solutions.' },
+    { year: '2025', event: 'Registered as Private Limited - Officially registered as a Private Limited Company, marking a significant milestone in our growth and commitment to excellence.' }
   ];
 
   return (
