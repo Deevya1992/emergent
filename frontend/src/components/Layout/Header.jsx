@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Moon, Sun, Menu, X, ChevronDown } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
@@ -9,6 +9,8 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const location = useLocation();
+  const dropdownRef = useRef(null);
+  const closeTimeoutRef = useRef(null);
 
   const navigation = [
     { name: 'Home', href: '/' },
