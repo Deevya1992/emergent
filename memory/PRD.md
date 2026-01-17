@@ -16,7 +16,7 @@ Build an enterprise-grade IT services and digital marketing website for Deaxautt
 ### Phase 2: Pure Static HTML/CSS/JS Website (Current - COMPLETE)
 Successfully rebuilt the entire website using pure HTML, CSS, JavaScript, and jQuery.
 
-**Pages Created (29 total):**
+**Pages Created (33 total):**
 - Home page (`index.html`)
 - About page (`about/index.html`)
 - Contact page (`contact/index.html`)
@@ -26,6 +26,12 @@ Successfully rebuilt the entire website using pure HTML, CSS, JavaScript, and jQ
 - Industries page (`industries/index.html`)
 - Services overview page (`services/index.html`)
 - 404 Error page (`404.html`)
+
+**Category Landing Pages (4 pages):**
+- Website Development (`/services/website-development/`)
+- Mobile App Development (`/services/mobile-app/`)
+- Software Development (`/services/software/`)
+- Digital Marketing (`/services/digital-marketing/`)
 
 **Individual Service Pages (20 pages):**
 
